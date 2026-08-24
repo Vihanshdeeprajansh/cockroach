@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Pest Control Pro | Advanced Home Shield</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- GSAP for Advanced Apple Motion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* Modern SF Pro Apple Font Stack */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #fff5f5, #f0f6ff, #ffebee, #edf2ff);
+            background-size: 400% 400%;
+            animation: gradientMotion 18s ease infinite;
+        }
+
+        /* Fluid Gradient Motion Background */
+        @keyframes gradientMotion {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Modern Dynamic Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating Orb Ambient Blur Filters */
+        .orb-red {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .orb-blue {
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(90px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Apple Interactive Micro-Animations */
+        .apple-hover {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .apple-hover:hover {
+            transform: translateY(-8px) scale(1.015);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Text Shimmer Effect */
+        .text-glow {
+            background: linear-gradient(135deg, #ef4444 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased relative">
+
+    <!-- Floating Background Orbs for Parallax Motion -->
+    <div class="orb-red top-10 left-[-100px] float-orb"></div>
+    <div class="orb-blue top-[600px] right-[-100px] float-orb"></div>
+    <div class="orb-red top-[1800px] left-[20%] float-orb"></div>
+
+    <!-- GLASS NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-1 group">
+                QuickPest<span class="text-red-500 group-hover:scale-110 transition-transform">Pro</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                <a href="#blog" class="hover:text-blue-600 transition-colors">Blog Guide</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-red-500 to-blue-600 text-white font-medium text-sm shadow-lg shadow-blue-500/20 hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-200">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-24">
+
+        <!-- HOME / HERO SECTION -->
+        <section id="home" class="min-h-[90vh] flex items-center justify-center px-6 relative">
+            <div class="max-w-4xl mx-auto text-center space-y-6" data-aos="fade-up" data-aos-duration="1000">
+                <span class="inline-block px-4 py-1.5 rounded-full glass-card text-xs font-semibold tracking-wide text-blue-600 uppercase border border-white/80">
+                    Next-Gen Environmental Hygiene
+                </span>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                    Pure Comfort. <br/>
+                    <span class="text-glow">Zero Invaders.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+                    Sleek, targeted extermination engineered to keep Long Island residences protected with absolute precision and peace of mind.
+                </p>
+                <div class="pt-6 flex justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#services" class="px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all hover:scale-105 shadow-xl">
+                        Explore Solutions
+                    </a>
+                    <a href="#blog" class="px-8 py-3.5 rounded-full glass-card text-slate-800 font-medium hover:bg-white/80 transition-all hover:scale-105">
+                        Read Islip Guide
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-24 px-6">
+            <div class="max-w-5xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <div class="glass-card rounded-3xl p-8 md:p-14 apple-hover">
+                    <div class="max-w-3xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-red-500 mb-2 block">Our Standard</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Designed around absolute precision & non-intrusive care.</h2>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            Quick Pest Control Pro combines modern micro-targeted eradication methods with long-term barrier science. Our focus is structural relief at the source, giving Suffolk County homes complete stability all year long.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-slate-200/60">
+                            <div data-aos="zoom-in" data-aos-delay="100">
+                                <p class="text-3xl font-extrabold text-blue-600">100%</p>
+                                <p class="text-sm text-slate-500 font-medium">Safe Application</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay="200">
+                                <p class="text-3xl font-extrabold text-red-500">Fast</p>
+                                <p class="text-sm text-slate-500 font-medium">Targeted Response</p>
+                            </div>
+                            <div data-aos="zoom-in" data-aos-delay="300">
+                                <p class="text-3xl font-extrabold text-slate-900">24/7</p>
+                                <p class="text-sm text-slate-500 font-medium">Monitoring Ready</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-5xl font-bold text-slate-900">Targeted Services</h2>
+                    <p class="text-slate-600 mt-3 max-w-xl mx-auto">Advanced programs engineered to solve persistent infestations permanently.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-3xl p-8 apple-hover" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-2xl bg-red-100/80 flex items-center justify-center mb-6 text-red-500">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Cockroach Eradication</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Systemic gel baiting, micro-void injection, and exclusion barriers targeted directly at high-risk entry points.</p>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-8 apple-hover" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100/80 flex items-center justify-center mb-6 text-blue-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Perimeter Shield</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Invisible structural defense applied along foundation edges to keep outdoor crawlers from breaching the envelope.</p>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-8 apple-hover" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-200/70 flex items-center justify-center mb-6 text-slate-700">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Seasonal Maintenance</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Year-round multi-point monitoring protocols to ensure continuous protection against weather-driven seasonal surges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG / WEB 2.0 CONTENT GUIDE (1,200+ WORDS) -->
+        <section id="blog" class="py-24 px-6">
+            <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-16 shadow-xl" data-aos="fade-up" data-aos-duration="1000">
+                
+                <!-- H1 Header -->
+                <header class="border-b border-slate-200/80 pb-8 mb-10">
+                    <span class="text-xs font-bold uppercase tracking-widest text-red-500">Suffolk County Homeowner Masterclass</span>
+                    <h1 class="text-3xl md:text-5xl font-black text-slate-900 mt-2 mb-4 leading-tight">
+                        The Comprehensive Guide to Pest Eradication & Structural Barrier Control in Long Island, NY
+                    </h1>
+                    <p class="text-slate-500 text-sm">Published by Quick Pest Control Pro • Updated Long Island Field Report</p>
+                </header>
+
+                <!-- Article Content -->
+                <article class="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-8">
+                    
+                    <p class="text-lg leading-relaxed font-light">
+                        Living on Long Island presents homeowners with an incredible suburban environment, but coastal humidity combined with seasonal temperature shifts creates ideal breeding grounds for household invaders. Among all structural pests encountered in Suffolk County, cockroaches represent one of the most stubborn and biologically resilient challenges. Whether you are dealing with a localized intrusion or an aggressive colony, understanding proper extermination techniques, preventive hygiene, and sealing protocols is vital for home safety.
+                    </p>
+
+                    <!-- H2 Section 1 -->
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-4">
+                        Understanding the Coastal Pest Dynamics in Long Island Communities
+                    </h2>
+                    
+                    <p>
+                        Cockroaches are remarkably adaptable organisms that thrive near water sources and warm interior cavities. In towns throughout Long Island, humid summers followed by tightly sealed winter heating systems allow cockroach populations to survive and expand indoors uninterrupted. The primary species affecting local structures are German cockroaches, American cockroaches, and Oriental cockroaches—each possessing distinct behavioral habits.
+                    </p>
+
+                    <p>
+                        German cockroaches are small, fast, and drawn directly to kitchen cabinets, warm appliance motors, and bathroom plumbing fixtures. Because a single female carries dozens of eggs per ootheca and reproduces rapidly, a small sighting can escalate into a full colony within weeks. American cockroaches, often referred to as waterbugs, prefer damp lower levels like basements, utility corridors, and drainage lines, migrating upward whenever outdoor weather swings rapidly.
+                    </p>
+
+                    <!-- Long Island Customer Testimonial -->
+                    <div class="my-10 p-8 glass-card rounded-2xl border-l-4 border-red-500 bg-white/60 apple-hover" data-aos="fade-right">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Verified Long Island Customer Experience</h3>
+                        <p class="italic text-slate-600 mb-4">
+                            "Living close to the south shore in Suffolk County, we ran into persistent pest activity around our basement utility room and kitchen counters. Over-the-counter sprays only made them move into different walls. Hiring a professional <a href="https://quickpestcontrolpro.com/pest-control-islip-ny" class="text-blue-600 font-semibold underline hover:text-red-500 transition-colors">cockroach exterminator islip</a> technician completely solved the issue. They located hidden voids behind our plumbing, used targeted baiting, and sealed the entry seams. The home has been totally clean ever since."
+                        </p>
+                        <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">— Mark T., Long Island Resident (Islip, NY)</p>
+                    </div>
+
+                    <!-- H2 Section 2 -->
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-4">
+                        Health Risks and Environmental Impacts of Unaddressed Infestations
+                    </h2>
+
+                    <p>
+                        The presence of cockroaches extends far beyond aesthetic inconvenience. They pose documented health risks to humans. As roaches travel across waste pipes, garbage zones, and damp subfloors, they collect harmful micro-organisms like E. coli and Salmonella on their legs and bodies, transferring them onto food surfaces and dishware.
+                    </p>
+
+                    <p>
+                        In addition, cockroaches frequently shed skin and leave behind microscopic fecal fragments that easily airborne through forced-air heating and cooling units. Medical studies confirm that these airborne proteins act as potent triggers for persistent respiratory issues and asthma attacks, particularly in young children. Professional eradication is essential to maintaining clean indoor air quality.
+                    </p>
+
+                    <!-- H3 Sub-section -->
+                    <h3 class="text-xl font-bold text-slate-900 pt-2">
+                        Key Indicators of an Escalating Infestation
+                    </h3>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Fecal Specks:</strong> Tiny black droppings resembling black pepper located near hinges, drawers, or appliance backs.</li>
+                        <li><strong>Egg Cases (Oothecae):</strong> Small, dark brown capsule-like egg cases hidden in cabinet joints or under sinks.</li>
+                        <li><strong>Pheromone Odor:</strong> An oily, musty odor that persists when roach clusters occupy unventilated spaces.</li>
+                        <li><strong>Daytime Visibility:</strong> Seeing roaches roaming during daylight hours signals high population density inside wall voids.</li>
+                    </ul>
+
+                    <!-- H2 Section 3 -->
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-4">
+                        Integrated Pest Management (IPM): The Modern Standard
+                    </h2>
+
+                    <p>
+                        Long-term eradication requires Integrated Pest Management (IPM)—a multi-stage strategy focusing on thorough inspection, non-repellent baiting, growth regulators, and structural sealing rather than relying solely on harsh aerosol sprays.
+                    </p>
+
+                    <!-- H3 Sub-section -->
+                    <h3 class="text-xl font-bold text-slate-900 pt-2">
+                        1. Precision Mapping and Inspection
+                    </h3>
+                    <p>
+                        A certified technician conducts a thorough evaluation of plumbing penetration lines, subfloor moisture levels, and warmth zones (such as motor housings behind refrigerators) to locate active harborage zones.
+                    </p>
+
+                    <!-- H3 Sub-section -->
+                    <h3 class="text-xl font-bold text-slate-900 pt-2">
+                        2. Non-Repellent Baits and Insect Growth Regulators (IGRs)
+                    </h3>
+                    <p>
+                        Rather than spraying repellents that cause pests to scatter deeper into structural voids, technicians place precise, non-repellent gel baits combined with IGRs. Foraging pests carry these compounds back to hidden nests, safely eliminating the colony from within.
+                    </p>
+
+                    <!-- H3 Sub-section -->
+                    <h3 class="text-xl font-bold text-slate-900 pt-2">
+                        3. Structural Exclusion and Sealing
+                    </h3>
+                    <p>
+                        Eradication is finalized by sealing gaps around water pipes, wall openings, baseboard joints, and electrical penetrations using silicone caulk and heavy-gauge wire mesh to block external entry points.
+                    </p>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-4">
+                        Long-Term Maintenance Checklist for Homeowners
+                    </h2>
+
+                    <p>
+                        Once your home is cleared, keeping it pest-free demands ongoing preventive hygiene practices:
+                    </p>
+
+                    <ol class="list-decimal pl-6 space-y-3">
+                        <li><strong>Fix Moisture Leaks Promptly:</strong> Inspect under-sink plumbing fittings regularly and keep basement humidity under control.</li>
+                        <li><strong>Seal Food Items:</strong> Store dry foods, cereals, and pet food inside airtight glass or durable plastic containers.</li>
+                        <li><strong>Maintain Nightly Counter Hygiene:</strong> Wipe down counters, sweep kitchen floors, and clear food residue from sinks before bed.</li>
+                        <li><strong>Empty Indoor Trash Daily:</strong> Keep refuse containers tightly covered and dispose of waste frequently.</li>
+                    </ol>
+
+                    <!-- FAQ SECTION -->
+                    <div class="mt-12 pt-10 border-t border-slate-200/80" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions (F&Q)</h2>
+
+                        <div class="space-y-6">
+                            <div class="p-6 glass-card rounded-2xl apple-hover">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Q: Why do store-bought sprays often fail to clear roaches permanently?</h3>
+                                <p class="text-slate-600 text-sm">A: Household sprays only kill exposed pests on contact while causing hidden nest members to scatter into deeper wall cavities. Professional gel baits eliminate the nest source completely.</p>
+                            </div>
+
+                            <div class="p-6 glass-card rounded-2xl apple-hover">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Q: How long does a full eradication cycle take?</h3>
+                                <p class="text-slate-600 text-sm">A: Initial treatment typically takes 1 to 2 hours. Activity drops substantially within 3 to 7 days, with complete elimination achieved after follow-up inspections in 2 to 3 weeks.</p>
+                            </div>
+
+                            <div class="p-6 glass-card rounded-2xl apple-hover">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Q: Are modern IPM treatments safe for children and household pets?</h3>
+                                <p class="text-slate-600 text-sm">A: Yes. Modern treatments use targeted micro-dot gel baits placed deep inside out-of-reach cabinet hinges and crevices where pets and children cannot access them.</p>
+                            </div>
+
+                            <div class="p-6 glass-card rounded-2xl apple-hover">
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Q: How often should Long Island homes undergo preventive checks?</h3>
+                                <p class="text-slate-600 text-sm">A: Bi-annual seasonal checks are recommended due to heavy weather shifts on Long Island that force outdoor pests to seek shelter indoors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONCLUSION -->
+                    <div class="mt-12 p-8 glass-card rounded-2xl bg-gradient-to-r from-red-500/10 to-blue-500/10 border border-slate-200" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-slate-900 mb-3">Conclusion</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Protecting a home from pest intrusion requires a balanced combination of consistent household cleanliness and modern targeted extermination protocols. By addressing entry points, controlling excess moisture, and utilizing proven integrated solutions, Long Island homeowners can safeguard their properties and maintain clean indoor living environments year after year.
+                        </p>
+                    </div>
+
+                </article>
+            </div>
+        </section>
+
+        <!-- ANONYMOUS CONTACT FORM SECTION -->
+        <section id="contact" class="py-24 px-6 relative">
+            <div class="max-w-xl mx-auto glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative apple-hover" data-aos="zoom-in" data-aos-duration="800">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Get In Touch</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-1">Send Us a Message</h2>
+                    <p class="text-slate-500 text-sm mt-2">Fill out your details below and a representative will handle your request anonymously.</p>
+                </div>
+
+                <!-- Pure Customer Form (Zero Business Info Exposed, Submits Directly to Mailbox via Formspree) -->
+                <form action="https://formspree.io/f/xbjnqpyv" method="POST" class="space-y-5">
+                    <div>
+                        <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-xl bg-white/70 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm text-slate-800"/>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-white/70 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm text-slate-800"/>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(631) 000-0000" class="w-full px-4 py-3 rounded-xl bg-white/70 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm text-slate-800"/>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Describe your inquiry..." class="w-full px-4 py-3 rounded-xl bg-white/70 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm text-slate-800"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-red-500 to-blue-600 text-white font-semibold shadow-lg shadow-blue-500/25 hover:opacity-95 hover:scale-[1.01] active:scale-95 transition-all duration-200">
+                        Submit Details
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ANONYMOUS FOOTER -->
+    <footer class="py-8 border-t border-slate-200/60 text-center text-xs text-slate-500">
+        <p>© 2026 Quick Pest Control Pro. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS ANIMATION SCRIPT INIT -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            once: true,
+            duration: 900,
+            easing: 'ease-out-cubic'
+        });
+
+        // Apple-style Continuous Floating Parallax Background Orbs
+        gsap.to(".float-orb", {
+            y: "30px",
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+    </script>
+</body>
+</html>
